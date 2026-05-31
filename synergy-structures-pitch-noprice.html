@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F8 Marketing × Synergy Structures — Growth Proposal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .section { padding: 80px 0; border-bottom: 1px solid #1a1a1a; }
+    .label { color: #3b82f6; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .title { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .subtitle { color: #777; font-size: 16px; max-width: 600px; line-height: 1.7; }
+    .highlight { color: #3b82f6; }
+    .green { color: #4ade80; }
+
+    /* COVER */
+    .cover {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0d1a2e 100%);
+      padding: 100px 0 80px;
+      border-bottom: 1px solid #1a1a1a;
+      text-align: center;
+    }
+    .cover-badge {
+      display: inline-block;
+      background: #0d1a2e;
+      border: 1px solid #1e3a5f;
+      color: #3b82f6;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .cover h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 900; letter-spacing: -2px; margin-bottom: 16px; line-height: 1.05; }
+    .cover p { color: #666; font-size: 17px; max-width: 500px; margin: 0 auto 40px; }
+    .cover-meta { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .cover-meta-item .val { font-size: 13px; color: #fff; font-weight: 700; }
+    .cover-meta-item .key { font-size: 11px; color: #444; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* OPPORTUNITY */
+    .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .opp-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 24px; }
+    .opp-card.red { border-left: 3px solid #ef4444; }
+    .opp-card.green { border-left: 3px solid #4ade80; }
+    .opp-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .opp-card.red h4 { color: #ef4444; }
+    .opp-card.green h4 { color: #4ade80; }
+    .opp-card ul { list-style: none; }
+    .opp-card ul li { font-size: 14px; color: #888; padding: 5px 0; border-bottom: 1px solid #1a1a1a; }
+    .opp-card ul li:last-child { border-bottom: none; }
+    .opp-card ul li::before { content: "→ "; color: #444; }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex;
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .stat-box { flex: 1; min-width: 150px; padding: 28px 24px; text-align: center; border-right: 1px solid #1e1e1e; }
+    .stat-box:last-child { border-right: none; }
+    .stat-box .num { font-size: 36px; font-weight: 900; color: #3b82f6; }
+    .stat-box .lbl { font-size: 12px; color: #555; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* STRATEGY */
+    .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 40px; }
+    .strategy-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
+    .strategy-card:hover { border-color: #3b82f6; }
+    .strategy-num { font-size: 12px; font-weight: 800; color: #3b82f6; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .strategy-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 10px; }
+    .strategy-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+    /* ANGLES */
+    .angles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 40px; }
+    .angle-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 22px; }
+    .angle-num { color: #3b82f6; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .angle-card h4 { font-size: 16px; margin-bottom: 8px; }
+    .angle-card p { font-size: 13px; color: #666; }
+
+    /* PROJECTION TABLE */
+    .proj-table { width: 100%; border-collapse: collapse; margin-top: 40px; border-radius: 12px; overflow: hidden; }
+    .proj-table th { background: #111; padding: 14px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #555; text-align: left; border-bottom: 1px solid #1e1e1e; }
+    .proj-table td { padding: 16px 20px; font-size: 14px; border-bottom: 1px solid #111; background: #0d0d0d; color: #888; }
+    .proj-table tr:last-child td { border-bottom: none; }
+    .proj-table td:first-child { font-weight: 700; color: #fff; }
+    .proj-table td.blue { color: #3b82f6; font-weight: 700; }
+    .proj-table td.green { color: #4ade80; font-weight: 700; }
+
+    /* ROI CALLOUT */
+    .roi-callout { background: #0d1f0d; border: 1px solid #1a3a1a; border-radius: 14px; padding: 36px; margin-top: 40px; text-align: center; }
+    .roi-callout h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; }
+    .roi-callout p { color: #666; font-size: 15px; max-width: 560px; margin: 0 auto; }
+    .roi-numbers { display: flex; justify-content: center; gap: 50px; margin: 28px 0; flex-wrap: wrap; }
+    .roi-num .val { font-size: 42px; font-weight: 900; color: #4ade80; }
+    .roi-num .lbl { font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* DELIVERABLES */
+    .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 40px; }
+    .deliverable { display: flex; gap: 16px; background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 20px; align-items: flex-start; }
+    .deliverable-icon { font-size: 24px; flex-shrink: 0; }
+    .deliverable h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .deliverable p { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* CTA */
+    .cta-section { padding: 80px 0; text-align: center; }
+    .cta-section h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .cta-section p { color: #666; font-size: 16px; margin-bottom: 36px; }
+    .cta-btn { display: inline-block; background: #3b82f6; color: #fff; padding: 16px 40px; border-radius: 8px; font-weight: 800; font-size: 16px; }
+    .cta-sub { margin-top: 20px; color: #444; font-size: 13px; }
+
+    footer { padding: 30px 40px; text-align: center; color: #2a2a2a; font-size: 12px; border-top: 1px solid #111; }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .opportunity-grid { grid-template-columns: 1fr; }
+      .cover h1 { font-size: 36px; }
+      .cover-meta { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="container">
+      <div class="cover-badge">Prepared by F8 Marketing</div>
+      <h1>Synergy Structures<br><span style="color:#3b82f6;">Growth Proposal</span></h1>
+      <p>A data-backed plan to generate consistent, high-quality leads through AI-powered Meta advertising.</p>
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="val">Jack Hallett</div>
+          <div class="key">Prepared By</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="val">F8 Marketing</div>
+          <div class="key">Agency</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="val">Synergy Structures</div>
+          <div class="key">Prepared For</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="val">May 2026</div>
+          <div class="key">Date</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPPORTUNITY -->
+  <div class="section">
+    <div class="container">
+      <div class="label">The Opportunity</div>
+      <h2 class="title">You Have a Great Product.<br>Not Enough People Know About It.</h2>
+      <p class="subtitle">Synergy Structures is an award-winning manufacturer with 1,500+ structures built and a proven product line. The problem isn't the business — it's visibility. Right now, your competitors are capturing leads you should be getting.</p>
+
+      <div class="opportunity-grid">
+        <div class="opp-card red">
+          <h4>Current State — The Gaps</h4>
+          <ul>
+            <li>249 Facebook followers for an established manufacturer</li>
+            <li>No active paid advertising found</li>
+            <li>No testimonials on landing pages</li>
+            <li>No lead generation system — just a phone number</li>
+            <li>No retargeting in place</li>
+            <li>Competitors capturing leads you're missing</li>
+          </ul>
+        </div>
+        <div class="opp-card green">
+          <h4>What's Possible — The Upside</h4>
+          <ul>
+            <li>Zero ad competition locally = cheaper leads</li>
+            <li>High-ticket product = massive ROI on every closed deal</li>
+            <li>Multiple product lines to run separate campaigns</li>
+            <li>Strong brand story and credentials to leverage</li>
+            <li>Proven industry with consistent year-round demand</li>
+            <li>Easy wins: testimonials, before/afters, process content</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="num">249</div>
+          <div class="lbl">Current FB Followers</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">$0</div>
+          <div class="lbl">Current Ad Spend</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">1,500+</div>
+          <div class="lbl">Structures Built</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2021</div>
+          <div class="lbl">Industry of the Year</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGY -->
+  <div class="section">
+    <div class="container">
+      <div class="label">The Strategy</div>
+      <h2 class="title">How We'll Grow<br><span class="highlight">Synergy Structures</span></h2>
+      <p class="subtitle">A full-funnel Meta advertising system built specifically for high-ticket home and commercial structures — designed to generate consistent, qualified leads on autopilot.</p>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <div class="strategy-num">Step 01</div>
+          <h3>Account Setup & Foundation</h3>
+          <p>Meta Business Manager configuration, pixel installation, campaign structure, and audience setup. Done right from day one.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-num">Step 02</div>
+          <h3>AI-Powered Ad Creative</h3>
+          <p>15-25 ad variations generated using proven frameworks — before/after carousels, product showcase videos, social proof ads, and seasonal offers across all product lines.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-num">Step 03</div>
+          <h3>Campaign Launch & Testing</h3>
+          <p>Launch with 2-3 ad sets targeting your service area. Broad creative targeting — the ads do the work. Find winners fast and cut what's bleeding money.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-num">Step 04</div>
+          <h3>Daily Optimization</h3>
+          <p>Ads checked and optimized every day. Kill what's losing, scale what's winning. No wasted spend.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-num">Step 05</div>
+          <h3>Retargeting System</h3>
+          <p>Follow up with everyone who visited your site or watched your videos. Warm leads close at a much higher rate — most competitors skip this entirely.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-num">Step 06</div>
+          <h3>Reporting & Transparency</h3>
+          <p>Weekly performance updates every Monday. Monthly strategy call reviewing results, wins, challenges, and the plan for next month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD ANGLES -->
+  <div class="section">
+    <div class="container">
+      <div class="label">Ad Strategy</div>
+      <h2 class="title">The Angles That<br>Will <span class="highlight">Drive Leads</span></h2>
+      <p class="subtitle">Every ad runs one message. These are the six angles we'll test and scale specifically for Synergy Structures.</p>
+
+      <div class="angles-grid">
+        <div class="angle-card">
+          <div class="angle-num">Angle 01</div>
+          <h4>The Before/After</h4>
+          <p>"See what a Synergy storage building did for this property in 48 hours." Most powerful format for visual transformation products.</p>
+        </div>
+        <div class="angle-card">
+          <div class="angle-num">Angle 02</div>
+          <h4>The Free Quote</h4>
+          <p>"Get a free quote on a custom storage building — delivered and installed in your area." Zero-friction lead gen with a clear offer.</p>
+        </div>
+        <div class="angle-card">
+          <div class="angle-num">Angle 03</div>
+          <h4>The Problem Call-Out</h4>
+          <p>"Running out of storage space? Tools everywhere? There's a better solution." Speaks directly to the frustration buyers already feel.</p>
+        </div>
+        <div class="angle-card">
+          <div class="angle-num">Angle 04</div>
+          <h4>Social Proof</h4>
+          <p>"1,500+ structures built. Award-winning manufacturer. Here's what our customers say." Authority + proof = trust = leads.</p>
+        </div>
+        <div class="angle-card">
+          <div class="angle-num">Angle 05</div>
+          <h4>The Process Video</h4>
+          <p>Behind-the-scenes of a structure being built and delivered. Shows quality, speed, and professionalism. Builds massive trust fast.</p>
+        </div>
+        <div class="angle-card">
+          <div class="angle-num">Angle 06</div>
+          <h4>Seasonal Urgency</h4>
+          <p>"Get your structure installed before summer/winter. Limited slots available." Time-based pressure that drives action.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTIONS -->
+  <div class="section">
+    <div class="container">
+      <div class="label">Growth Projections</div>
+      <h2 class="title">What to Expect<br><span class="highlight">Month by Month</span></h2>
+      <p class="subtitle">Conservative projections based on industry benchmarks for high-ticket structure companies. Every number assumes your team follows up on leads within 5 minutes.</p>
+
+      <table class="proj-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Ad Budget/Mo</th>
+            <th>Est. Leads</th>
+            <th>Est. Sales (15%)</th>
+            <th>Revenue Generated</th>
+            <th>ROAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Month 1–2 (Testing)</td>
+            <td>$600–$1,200</td>
+            <td class="blue">20–40</td>
+            <td>3–6 sales</td>
+            <td class="green">$24,000–$48,000</td>
+            <td class="green">20x–40x</td>
+          </tr>
+          <tr>
+            <td>Month 3–4 (Scaling)</td>
+            <td>$1,500–$3,000</td>
+            <td class="blue">60–100</td>
+            <td>9–15 sales</td>
+            <td class="green">$72,000–$120,000</td>
+            <td class="green">24x–40x</td>
+          </tr>
+          <tr>
+            <td>Month 5–6 (Optimized)</td>
+            <td>$3,000–$4,500</td>
+            <td class="blue">100–160</td>
+            <td>15–24 sales</td>
+            <td class="green">$120,000–$192,000</td>
+            <td class="green">27x–43x</td>
+          </tr>
+          <tr>
+            <td>Month 7–12 (Automated)</td>
+            <td>$4,500+</td>
+            <td class="blue">160+</td>
+            <td>24+ sales</td>
+            <td class="green">$192,000+/mo</td>
+            <td class="green">43x+</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="roi-callout">
+        <h3>The ROI Reality Check</h3>
+        <div class="roi-numbers">
+          <div class="roi-num">
+            <div class="val">$8,000</div>
+            <div class="lbl">Avg Sale Value</div>
+          </div>
+          <div class="roi-num">
+            <div class="val">$35</div>
+            <div class="lbl">Est. Cost Per Lead</div>
+          </div>
+          <div class="roi-num">
+            <div class="val">1 Sale</div>
+            <div class="lbl">Pays for 2–3 Months of Ads</div>
+          </div>
+        </div>
+        <p>Even in a worst-case scenario, one closed deal from our ads covers your entire ad budget for multiple months. The math is heavily in your favor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLES -->
+  <div class="section">
+    <div class="container">
+      <div class="label">What's Included</div>
+      <h2 class="title">Everything We<br>Handle <span class="highlight">For You</span></h2>
+      <p class="subtitle">You run the business. We run the ads. Here's exactly what you get every month.</p>
+
+      <div class="deliverables-grid">
+        <div class="deliverable">
+          <div class="deliverable-icon">⚙️</div>
+          <div>
+            <h4>Full Account Setup</h4>
+            <p>Meta Business Manager, pixel installation, campaign structure, and audience setup. Done right from day one.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">✍️</div>
+          <div>
+            <h4>AI-Powered Ad Copy</h4>
+            <p>15-25 ad variations per month using proven copywriting frameworks. Natural, local, never salesy.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">🎨</div>
+          <div>
+            <h4>Creative Production</h4>
+            <p>Static images, carousels, and video ads across all formats. Built for mobile-first audiences.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">📊</div>
+          <div>
+            <h4>Daily Optimization</h4>
+            <p>Ads checked and optimized every day. Kill what's losing, scale what's winning. No wasted spend.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">🔄</div>
+          <div>
+            <h4>Retargeting Campaigns</h4>
+            <p>Follow up with everyone who visited your site or watched your videos. Warm leads close faster.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">📈</div>
+          <div>
+            <h4>Weekly Reports</h4>
+            <p>Clear performance breakdown every Monday — leads, cost per lead, spend, and what's next.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">📞</div>
+          <div>
+            <h4>Monthly Strategy Call</h4>
+            <p>30-minute call every month reviewing results and planning the next 30 days together.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <div class="deliverable-icon">🛡️</div>
+          <div>
+            <h4>Policy Compliance</h4>
+            <p>Every ad reviewed for Meta policy compliance before launch. No account flags, no surprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <div class="label" style="text-align:center;">Next Steps</div>
+      <h2>Ready to Start<br>Generating Leads?</h2>
+      <p>Let's get your first campaign live within 7 days. No complicated onboarding — just results.</p>
+      <a href="mailto:marketingjackh@gmail.com" class="cta-btn">Get Started with F8 Marketing →</a>
+      <div class="cta-sub">Or reach out to Jack directly to discuss next steps.</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 F8 Marketing · Prepared for Synergy Structures · All figures are projections based on industry benchmarks.</p>
+  </footer>
+
+</body>
+</html>
